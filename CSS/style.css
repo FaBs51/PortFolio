@@ -1,3 +1,109 @@
-body{
+
+
+*{  overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Alegreya', serif;
+    font-style: italic;
+    font-weight: bold;
+}
+:root{
+    --color-1: white;
+    --color-2: #BBD3FF;
+    ;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+}
+section{
+    background: hsla(141, 54%, 86%, 1);
+
+    background: linear-gradient(135deg, hsla(141, 54%, 86%, 1) 0%, hsla(333, 73%, 85%, 1) 50%, hsla(211, 58%, 79%, 1) 100%);
+    
+    background: -moz-linear-gradient(135deg, hsla(141, 54%, 86%, 1) 0%, hsla(333, 73%, 85%, 1) 50%, hsla(211, 58%, 79%, 1) 100%);
+    
+    background: -webkit-linear-gradient(135deg, hsla(141, 54%, 86%, 1) 0%, hsla(333, 73%, 85%, 1) 50%, hsla(211, 58%, 79%, 1) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#CAEFD7", endColorstr="#F5BFD7", GradientType=1 );
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.navBar{
+    position: absolute;
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: space-evenly; align-items: center;
+    font-size: 2rem;
+}
+.navBar .item{
+    padding: 0.4rem;
+    text-align: center;
+    height: 100%;
+    color: var(--color-1);
+    transform: scale(0.8) translateY(0px);
+    transition: all 400ms ease;
+    cursor: pointer;
+}
+.item:hover{
+    transform: scale(0.8) translateX(-10px);
+}
+.item.active{
+    transform: scale(1) translateY(10px);
+}
+
+.contactbar{
+    display: flex;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+    width: 100%;
+    height: 50px;
+}
+
+.contactbar .clickBtn{
+    transition: all 2s;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    place-items: center;
+    width: 20%;
+    height: 100%;
+}
+.contactbar .clickBtn i{
+    color: var(--color-1);
+    font-size: 2rem;
+}
+.contactbar .clickBtn:hover{
+    animation: launch 0.4s ease  2  ;
+}
+@keyframes launch {
+    0% { transform: translateX(-50%) translateX(0px);
+
+    }
+    50%{
+        transform: translateX(-50%) translateX(-10px);
+    }
+    75%{
+        transform: translateX(-50%) translateX(10px);
+    }
+    100%{
+        transform:translateX(-50%) translateX(0px);
+    }
+}
+.contactbar .icons{
+    display: none;
+}
+.contactbar .icons.show{
+    font-size: 1.5rem;
+    width: 80%;
+    height: 100%;
+    color: var(--color-1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
